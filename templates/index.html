@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Lagu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🎵 Daftar Lagu Favorit</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Judul Lagu</th>
+            <th>Penyanyi</th>
+        </tr>
+        {% for l in lagu %}
+        <tr>
+            <td>{{ l.id }}</td>
+            <td>{{ l.judul }}</td>
+            <td>{{ l.penyanyi }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{{ url_for('tambah') }}">➕ Tambah Lagu Baru</a>
+</body>
+</html>
